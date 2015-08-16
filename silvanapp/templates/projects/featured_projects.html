@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block sitetitle %}<title>Silvan Adrian | Home</title>{% endblock %}
+
+{% block content %}
+<section id="homeslider">
+<div id="slides">
+   <ul class="navislider"></ul>
+    <ul class="rslides">
+{% for project in projects %}
+                
+			
+			 
+				<li><img src="/{{ project.square_image }}" /><div class="excerpt"><a href="{{ project.get_absolute_url }}"><h3>{{ project.title }}</h3></a><p>{{ project.excerpt }}</p></div></li>
+		
+                
+			
+{% empty %}
+    <h2 align="center">No projects. :(</h2>
+{% endfor %}
+	</ul>
+</div></section>
+
+				<section id="contenttext">
+				<h2 class="homepage"><span class="developer">Developer</span><span class="designer">Designer</span></h2>
+					
+					<section class="develop">	
+					<h2>Development</h2>				
+					<p class="developericon"><i class="fa-code"></i></p>
+					<p class="servicesintro">Umsetzen von Webapplikationen und dynamischen Webseiten.</p>
+					</section>
+					<section class="tools">
+					<h2>Support</h2>
+					<p class="designericon"><i class="fa-wrench"></i></p>
+					<p class="servicesintro">Hilfe bei Hosting oder umziehen einer Webseite.</p>
+					</section>
+					<section class="support">
+					<h2>Design</h2>
+					<p class="designericon"><i class="fa-tint"></i></p>
+					<p class="servicesintro">Erstellen von individuellen Themes und Templates.</p>
+                    </section>
+					
+				</section>
+
+
+
+
+<section class="clearfix"></section>
+{% endblock %}

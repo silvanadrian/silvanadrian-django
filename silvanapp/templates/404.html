@@ -1,0 +1,102 @@
+<!Doctype html>
+<html>
+
+<head>
+    {% block sitetitle %}<title>Silvan Adrian | {{ flatpage.title }}</title>{% endblock %}
+	<meta charset="utf-8">
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
+	<link rel="icon" type="image/png" href="http://silvanadrian.ch/static/img/logoicon.png" />
+	<script src="/static/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="/static/js/responsiveslides.min.js" type="text/javascript"></script>
+	<script src="/static/js/jquery.lazylinepainter-1.1.min.js"></script>
+    <script src="/static/js/raphael-min.js"></script>    
+    <script src="/static/js/main.js"></script>
+	<script type="text/javascript">
+	$(window).bind("load", function() {
+    $('#loading').fadeOut(2000);
+    });
+	$(document).ready(function(){
+	   $(".rslides").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        prevText: "&#xf104;",
+        nextText: "&#xf105;",
+        speed: 500,
+        maxwidth: 1200,
+        navContainer: ".navislider"
+      });
+    
+    $('.vorschlag').click(function(){
+        $('.vorschlagform').slideToggle();
+    });
+        
+      $('.java').animate({ width: '70%'}, 2500);
+        $('.php').animate({ width: '60%'}, 2500);
+        $('.ansic').animate({ width: '60%'}, 2500);
+        $('.html').animate({ width: '90%'}, 2500);
+        $('.javascript').animate({ width: '55%'}, 2500);
+        $('.ruby').animate({ width: '55%'},2500);
+        $('.mysql').animate({ width: '75%'}, 2500);
+        
+        $('.projectsoverview li').hover(function(){                            
+            $(this).find('div.projectexplwrap').fadeToggle();                             
+        });  
+         
+        
+        
+  
+    });
+	</script>
+</head>
+<body>
+
+<div id="loading"><div id="loadingsvg"></div></div>
+<header>
+    
+		<section id="header">
+			<nav class="header">
+				<ul>
+					{% block projectslink %}<li><a href="/projects/">Projekte</a></li>{% endblock %}
+					{% block boutlink %}<li><a href="/about/">Über mich</a></li>{% endblock %}
+					{% block bloglink %}<li><a href="/blog/">Blog</a></li>{% endblock %}
+					{% block kontaktlink %}<li><a href="/contact/">Kontakt</a></li>{% endblock %}
+                </ul>
+			</nav>
+			<a class="logo" alt="Silvan Adrian" href="/"><div id="logo">a</div></a>
+		
+		</section>
+    
+		
+</header>
+
+	<section id="container">
+        <div id="content">
+	   <h1 class="fourofour">404</h1>
+	   <h1 align="center">page not found</h1>
+        </div>
+		<footer>
+		<section id="footer">
+           <p class="kontakt">Kontakt aufnehmen</p>
+            <a class="kontaktmail" href="mailto:hallo@silvanadrian.ch">hallo@silvanadrian.ch</a>
+            <ul class="getintouch">
+                <a href="#"><li class="fa-twitter"></li></a>
+                <a href="#"><li class="fa-tumblr"></li></a>
+                <a href="#"><li class="fa-github"></li></a>
+                <a href="#"><li class="fa-linkedin"></li></a>
+                <a href="#"><li class="fa-skype"></li></a>
+                <a href="#"><li class="fa-vimeo-square"></li></a>
+            </ul>
+		<p class="copyright">Copyright 2013 Silvan Adrian</p>
+		<div id="links">
+		</div>
+		</section>
+		</footer>
+	
+	</section>
+
+
+</body>
+
+</html>

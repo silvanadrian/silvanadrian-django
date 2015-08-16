@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block sitetitle %}<title>Silvan Adrian | Kontakt</title>{% endblock %}
+{% block kontaktlink %}<li><a class ="active" href="/contact/">Kontakt</a></li>{% endblock %}
+
+{% block content %}	
+		
+		<section id ="content">
+            <section class="formleft"><h2>Fragen?</h2>
+            <p>Erreichbar bin ich unter der Mailadresse: <a href="mailto:hallo@silvanadrian.ch" >hallo@silvanadrian.ch</a></p>
+            <p>Schon lange ein Projekt im Sinn jedoch nicht die richtige Person zum Umsetzten gefunden?</p>
+            <p>Anbei findest du ein Projektformular um die wichtigsten Daten einzutragen und dann kann es schon losgehen.</p>
+            <p>Ich beantworte generell alle Anfragen innerhalb von 24 Stunden, also Nachricht senden und Antwort abwarten :)</p>
+            <p>Ich bin ebenfalls auf anderen Netzwerken und Kanälen erreichbar (im Footer und in der Über mich Seite findet man diese).</p>
+        
+            </section>
+            <section class="formright">
+                <h2>Projektanfrage</h2>
+            {% if form.errors %}
+        <p style="color: red;">
+            Bitte Fehler korrigieren.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+         {{ form.non_field_errors }}
+        
+        <div class="formtop">
+     <div class="links">
+         <h4>Name<br></h4>
+        {{ form.name }}
+         {{ form.name.errors }}
+    </div>
+    <div class="rechts">
+        <h4>E-Mail<br></h4>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+        </div>
+        
+        
+    <div class="fieldWrapper">
+        <h4>Projektbeschreibung<br></h4>
+        
+        
+        {{ form.description }}
+        {{ form.description.errors }}
+    </div>
+        
+    <div class="formtop">
+    <div class="links">
+         <h4>Budget<br></h4>
+        
+       
+        {{ form.budget }}
+        {{ form.budget.errors }}
+    </div>
+        
+     <div class="rechts">
+         <h4>Startdatum<br></h4>
+        
+        {{ form.startdatum }}
+         {{ form.startdatum.errors }}
+    </div>
+     </div>   
+    <div class="fieldWrapper">   
+         <h4>Projekttyp</h4>
+       
+         {{ form.projecttype }}
+        {{ form.projecttype.errors }}
+     </div>    
+        
+    <div class="fieldWrapper">
+        <h4>Noch zusätzliche Infos?<br></h4>
+        {{ form.sonstiges }}
+        {{ form.sonstiges.errors }}
+    </div>
+    <p><input type="submit" value="Senden" /></p>
+    </form>
+            
+            </section>
+        </section>
+
+ {% endblock %}

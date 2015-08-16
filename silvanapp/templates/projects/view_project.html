@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block sitetitle %}<title>Silvan Adrian | Blog</title>{% endblock %}
+{% block projectslink %}<li><a class="active" href="/projects/">Projekte</a></li>{% endblock %}
+{% block content %}
+
+
+
+<div class="project">
+         
+<img src="/{{ project.wide_image }}" />
+    
+<div class="customerdescription">
+    <h2>Projektinfo</h2>
+    <ul>
+    <li><h4>Kunde:</h4><p> {{ project.customername }}</p></li>
+    <li><h4>Link:</h4><p><a href="{{ project.url }}">{{project.url}}</a></p></li>
+    <li><h4>Aufgabe:</h4><p>Umsetzen eines neues Webdesigns inklusive Logo</p></li>
+    </ul>
+    </div>
+    
+    <div class="projectdescription">
+        <h2>{{ project.title }}</h2>
+        
+        
+        {{ project.description_html|safe }}</div>
+    
+
+</div>
+<section class="clearfix"></section>
+
+{% endblock %}

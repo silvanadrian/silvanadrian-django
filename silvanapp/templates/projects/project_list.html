@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block sitetitle %}<title>Silvan Adrian | Projekte</title>{% endblock %}
+{% block projectslink %}<li><a class="active" href="/projects/">Projekte</a></li>{% endblock %}
+{% block content %}
+
+ <ul class="projectsfilter">
+        <li><h3><a class="active" href="#">Alle</a></h3></li>
+        <li><h3><a href="#"><s>Design</s></a></h3></li>
+        <li><h3><a href="#"><s>Development</s></a></h3></li>
+           <li><h3><a href="#"><s>Fotografie</s></a></h3></li>
+           <li><h3><a href="#"><s>Videografie</s></a></h3></li>
+       </ul>
+<ul class="projectsoverview">
+{% for project in projects %}
+ 
+
+
+<a href="{{ project.get_absolute_url }}"><li class="project">
+ <div class="projectexplwrap"><h3>{{ project.title }}</h3>
+
+    <p>{{ project.excerpt }}</p>
+    <p class="continue">weiterlesen</p>
+    </div>
+    <img src="/{{ project.square_image }}" />
+   </li></a> 
+{% empty %}
+    <h2 align="center">No projects. :(</h2>
+{% endfor %}
+
+</ul>
+<section class="clearfix"></section>
+{% endblock %}
